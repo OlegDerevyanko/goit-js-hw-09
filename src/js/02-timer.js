@@ -35,7 +35,6 @@ const options = {
         startBtn.addEventListener('click', startCount);
     },
 };
-
 let fp = flatpickr(inputId, options);
 
 function startCount() {
