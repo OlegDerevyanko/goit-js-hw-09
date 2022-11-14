@@ -1,11 +1,3 @@
-function createPromise(position, delay) {
-  const shouldResolve = Math.random() > 0.3;
-  if (shouldResolve) {
-    // Fulfill
-  } else {
-    // Reject
-  }
-}
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 const form = document.querySelector('.form');
@@ -29,9 +21,9 @@ function createPromise(position, delay) {
   let promise = new Promise((resolve, reject) => {
     setTimeout(() => {
       if (shouldResolve) {
-        resolve(`✅ Fulfilled promise ${ position } in ${ delay }ms`)
+        resolve(`✅ Fulfilled promise ${position} in ${delay}ms`)
       } else {
-        reject(`❌ Rejected promise ${ position } in ${ delay }ms`)
+        reject(`❌ Rejected promise ${position} in ${delay}ms`)
       }
 
     }, delay);
@@ -39,5 +31,4 @@ function createPromise(position, delay) {
   promise
     .then(result => Notify.success(result))
     .catch(result => Notify.failure(result))
-
 }
